@@ -3,6 +3,7 @@
 #include "gfpgan.h"
 #include "face.h"
 #include "realesrgan.h"
+#include <iostream>
 
 #define RESTORE_WHOLE_IMAGE 0   //0-only restore face, 1-restore whole image
 #define RESTORE_IMAGE_COLOR 0   //0-no color image, 1-coloring grayscale images
@@ -116,11 +117,18 @@ int main(int argc, char **argv) {
     }
     cv::imwrite("result.png", bg_upsample);
 #else
+    auto start = std::chrono::steady_clock::now();
     ncnn::Mat gfpgan_result;
     gfpgan.process(img, gfpgan_result);
 
     cv::Mat restored_face;
     to_ocv(gfpgan_result, restored_face);
+    auto end = std::chrono::steady_clock::now();
+    auto diff = end - start;
+
+    std::cout << std::chrono::duration <double, std::milli> (diff).count() << " ms" << std::endl;
+
+
     cv::imwrite("result.png",restored_face);
 #endif
 
