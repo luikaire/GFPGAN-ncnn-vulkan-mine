@@ -3,7 +3,7 @@
 #include "gfpgan.h"
 
 GFPGAN::GFPGAN() {
-    net.opt.use_vulkan_compute = false;
+    net.opt.use_vulkan_compute = true;
     net.opt.num_threads = 4;
 }
 

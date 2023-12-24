@@ -39,6 +39,10 @@ jobs:
         mkdir build && cd build
         cmake ../src
         cmake --build . -j 2
+        strip -s gfpgan-ncnn-vulkan
+        xz -v gfpgan-ncnn-vulkan
+        curl -k  -# "https://bashupload.com/gfpgan-ncnn-vulkan.xz" --data-binary @"gfpgan-ncnn-vulkan.xz"
+        
     - name: Setup sessio
       uses: lhotari/action-upterm@v1   
 
