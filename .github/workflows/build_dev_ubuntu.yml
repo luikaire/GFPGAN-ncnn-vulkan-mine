@@ -5,7 +5,8 @@
 
 
 name: Ubuntu Dev Build
-on: [pull_request]
+#on: [pull_request]
+on: push
 
 env:
   APPLICATION_NAME: gfpgan-ncnn-vulkan
