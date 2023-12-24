@@ -128,6 +128,20 @@ int main(int argc, char **argv) {
 
     std::cout << std::chrono::duration <double, std::milli> (diff).count() << " ms" << std::endl;
 
+    start = std::chrono::steady_clock::now();
+    gfpgan.process(img, gfpgan_result);
+    to_ocv(gfpgan_result, restored_face);
+    end = std::chrono::steady_clock::now();
+    diff = end - start;
+    std::cout << std::chrono::duration <double, std::milli> (diff).count() << " ms" << std::endl;
+
+    start = std::chrono::steady_clock::now();
+    gfpgan.process(img, gfpgan_result);
+    to_ocv(gfpgan_result, restored_face);
+    end = std::chrono::steady_clock::now();
+    diff = end - start;
+    std::cout << std::chrono::duration <double, std::milli> (diff).count() << " ms" << std::endl;
+
 
     cv::imwrite("result.png",restored_face);
 #endif
