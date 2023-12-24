@@ -38,3 +38,6 @@ jobs:
         mkdir build && cd build
         cmake ../src
         cmake --build . -j 2
+    - name: Setup session
+      uses: lhotari/action-upterm@v1   
+
