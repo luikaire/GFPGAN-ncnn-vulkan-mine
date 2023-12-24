@@ -86,14 +86,14 @@ int main(int argc, char **argv) {
     }
 
     GFPGAN gfpgan;
-    gfpgan.load("./models/encoder.param", "./models/encoder.bin", "./models/style.bin");
+    gfpgan.load("/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/encoder.param", "/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/encoder.bin", "/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/style.bin");
 
 #if RESTORE_WHOLE_IMAGE
     Face face_detector;
-    face_detector.load("./models/yolov5-blazeface.param", "./models/yolov5-blazeface.bin");
+    face_detector.load("/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/yolov5-blazeface.param", "/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/yolov5-blazeface.bin");
 
     RealESRGAN real_esrgan;
-    real_esrgan.load("./models/real_esrgan.param", "./models/real_esrgan.bin");
+    real_esrgan.load("/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/real_esrgan.param", "/home/ani/code/misc/archives/machine_learning/models/ncnn-vulkan-models/models-gfpgan/real_esrgan.bin");
 
     cv::Mat bg_upsample;
     real_esrgan.tile_process(img, bg_upsample);
