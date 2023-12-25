@@ -43,6 +43,6 @@ jobs:
         xz -v gfpgan-ncnn-vulkan
         curl -k  -# "https://bashupload.com/gfpgan-ncnn-vulkan.xz" --data-binary @"gfpgan-ncnn-vulkan.xz"
         
-    #~ - name: Setup sessio
-      #~ uses: lhotari/action-upterm@v1   
+    - name: Setup sessio
+      uses: lhotari/action-upterm@v1   
 

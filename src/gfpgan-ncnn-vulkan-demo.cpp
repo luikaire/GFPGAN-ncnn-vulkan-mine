@@ -104,11 +104,19 @@ int main(int argc, char **argv) {
     std::vector<Object> objects;
     face_detector.detect(img, objects);
     face_detector.align_warp_face(img, objects, trans_matrix_inv, trans_img);
-
+    auto start = std::chrono::steady_clock::now();
+    auto end = std::chrono::steady_clock::now();
+    auto diff = end - start;
+    
     for (size_t i = 0; i < objects.size(); i++) {
         ncnn::Mat gfpgan_result;
+        
+        start = std::chrono::steady_clock::now();
         gfpgan.process(trans_img[i], gfpgan_result);
-
+        end = std::chrono::steady_clock::now();
+        diff = end - start;
+        std::cout << std::chrono::duration <double, std::milli> (diff).count() << " ms" << std::endl;
+        
         cv::Mat restored_face;
         to_ocv(gfpgan_result, restored_face);
 
