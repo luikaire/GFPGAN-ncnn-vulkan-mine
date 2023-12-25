@@ -3,7 +3,6 @@
 # Modified in here for newer vulkan
 # https://github.com/onuralpszr/realsr-ncnn-vulkan/blob/vulkan-ci-version/.github/workflows/CI.yml
 
-
 name: Ubuntu Dev Build
 #on: [pull_request]
 on: push
