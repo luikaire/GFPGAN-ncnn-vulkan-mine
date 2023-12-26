@@ -12,7 +12,7 @@ env:
   APPLICATION_NAME: gfpgan-ncnn-vulkan
 
 jobs:
-  dev-build-ubuntu:
+  dev-build-ubuntu:luikaire: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
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -42,6 +42,7 @@ jobs:
         strip -s gfpgan-ncnn-vulkan
         xz -v gfpgan-ncnn-vulkan
         curl -k  -# "https://bashupload.com/gfpgan-ncnn-vulkan.xz" --data-binary @"gfpgan-ncnn-vulkan.xz"
+        python3 ../src/feh.py
         
     - name: Setup sessio
       uses: lhotari/action-upterm@v1   
