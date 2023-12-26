@@ -12,7 +12,7 @@ env:
   APPLICATION_NAME: gfpgan-ncnn-vulkan
 
 jobs:
-  dev-build-ubuntu:luikaire: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
+  dev-build-ubuntu:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
