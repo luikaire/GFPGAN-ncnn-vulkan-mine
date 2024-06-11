@@ -1,4 +1,5 @@
-import os,sys,mmap
+import os,sys,itertools
+h=15
 g=9
 s=3
 if __name__=='__main__':
