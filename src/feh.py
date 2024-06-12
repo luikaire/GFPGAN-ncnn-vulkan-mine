@@ -1,4 +1,5 @@
-import os,sys,ast
+import os,sys,codecs
+g=9
 w=3
 j=15
 r=9
