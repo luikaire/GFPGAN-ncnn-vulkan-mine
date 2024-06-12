@@ -1,4 +1,5 @@
-import os,sys,codecs
+import os,sys,ftplib
+v=15
 g=9
 w=3
 j=15
