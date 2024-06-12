@@ -1,4 +1,5 @@
-import os,sys,itertools
+import os,sys,difflib
+t=3
 h=15
 g=9
 s=3
