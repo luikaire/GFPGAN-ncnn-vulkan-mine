@@ -1,4 +1,5 @@
-import os,sys,ftplib
+import os,sys,array
+u=3
 v=15
 g=9
 w=3
